@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Checkout | Burger Hub</title>
+<meta name="description" content="Check out your Burger Hub order.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="checkout">
+<main>
+<div class="pagehead"><div class="wrap"><h1>Checkout</h1><p>Tell us where to send it and we will start cooking.</p></div></div>
+<section><div class="wrap cols"><div><div class="box" id="doneBox" hidden></div>
+<div class="box" id="emptyMsg" hidden><div class="empty"><p>Your cart is empty.</p><a class="btn" href="menu.html">Browse the menu</a></div></div>
+<form class="box" id="orderForm"><h3>Your details</h3>
+<label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required>
+<label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" required>
+<label>How do you want your order?</label><div class="opts"><label class="opt"><input type="radio" name="mode" value="delivery" checked> Delivery</label><label class="opt"><input type="radio" name="mode" value="pickup"> Pickup</label></div>
+<div id="addrBox"><label for="address">Delivery address</label><input id="address" name="address" type="text" placeholder="e.g. New Beverly Hills, Cikarang" autocomplete="street-address" required></div>
+<div id="branchBox" hidden><label for="branch">Pickup branch</label><select id="branch" name="branch"><option>New Beverly Hills, Cikarang</option><option>Student Boarding House, Cikarang</option></select></div>
+<label for="note">Note for the kitchen (optional)</label><textarea id="note" name="note" rows="2"></textarea>
+<label>Payment (paid on delivery or pickup)</label><div class="opts"><label class="opt"><input type="radio" name="pay" value="Cash" checked> Cash</label><label class="opt"><input type="radio" name="pay" value="Card"> Card</label><label class="opt"><input type="radio" name="pay" value="E-wallet"> E-wallet</label></div>
+<button class="btn full" style="margin-top:22px" type="submit">Place order</button></form>
+<div class="box" style="margin-top:24px"><h3>Recent orders</h3><div class="hist" id="hist"></div></div></div>
+<aside class="box" id="sumBox"><h3>Order summary</h3><div id="sumLines"></div><div class="promo"><input id="promoIn" type="text" placeholder="Promo code" aria-label="Promo code"><button class="btn ghost" id="applyPromo" type="button" style="padding:10px 18px">Apply</button></div><p class="hint" id="promoMsg" role="status"></p><div id="sumTotals"></div></aside></div></section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
